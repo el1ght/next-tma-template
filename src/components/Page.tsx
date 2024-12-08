@@ -29,10 +29,11 @@ export function Page({ children, back = true }: PropsWithChildren<{
   }, [router]);
 
   return (
-      <div className={'h-full pb-3'}>
-          <Content>
+      <div className={'pb-20'}>
+
               {children}
-          </Content>
+
+
       </div>
   );
 }

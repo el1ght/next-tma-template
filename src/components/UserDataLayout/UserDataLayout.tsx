@@ -1,12 +1,10 @@
 'use client'
 
-import {useState, useEffect} from "react";
-
 import SongItem from "@/components/SongItem/SongItem";
 import useOnPlay from "@/hooks/useOnPlay";
 import Link from "next/link";
 import {usePathname, useRouter} from "next/navigation";
-import {initData, useSignal, miniApp} from '@telegram-apps/sdk-react';
+import {initData, useSignal} from '@telegram-apps/sdk-react';
 
 interface UserData {
     id: number;
@@ -82,45 +80,369 @@ const UserDataLayout = () => {
                 </Link>
             </div>
             {initDataUser ? (
+                <>
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'text-[20px] font-bold text-color ml-3'}>
+                            Hey, <span className={'subtitle-text-color'}>{initDataUser.firstName}</span>, wanna smth special?
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>World Top</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Greatest Hits</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'text-[18px] font-bold text-color ml-3'}>
+                            Based on your preferences
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'text-[18px] font-bold text-color ml-3'}>
+                            Miss you
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                    <div className={'absolute w-[30%] bg-[#424242] top-0 right-0 bottom-0 rounded-r-3xl'}></div>
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={' relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                    <div className={'absolute w-[30%] bg-[#424242] top-0 right-0 bottom-0 rounded-r-3xl'}></div>
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                    <div className={'absolute w-[30%] bg-[#424242] top-0 right-0 bottom-0 rounded-r-3xl'}></div>
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'flex items-center gap-x-2 ml-3'}>
+                            <Link href={'/artists/42352543'} className={'w-10 h-10 bg-neutral-400 rounded-full'}></Link>
+                            <Link href={'/artists/42352543'} className={'text-[20px] font-bold text-color'}>LXST CXNTURY</Link>
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'text-[18px] font-bold text-color ml-3'}>
+                            From your playlists
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'flex flex-col gap-y-3 mx-3'}>
+                        <div className={'text-[18px] font-bold text-color flex justify-between'}>
+                            <h3>Mix for you</h3>
+                            <Link href={'/mix'} className={'font-normal text-[12px] flex items-center justify-center py-1 px-3 border section-separator-color-border rounded-3xl'}>
+                                More
+                            </Link>
+                        </div>
+                        <div className={'flex flex-col gap-y-1'}>
+                            {
+                                mockSongs!.map((item: any) => (
+                                    <SongItem
+                                        key={item.id}
+                                        onClick={() => {}}
+                                        data={item}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'text-[18px] font-bold text-color ml-3'}>
+                            Playlists for you
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'flex items-center gap-x-2 ml-3'}>
+                            <div className={'w-10 h-10 bg-neutral-400 rounded-xl'}></div>
+                            <div className={'flex flex-col gap-y-1'}>
+                                <p className={'uppercase text-[16px] font-normal subtitle-text-color leading-4'}>Similar to</p>
+                                <h4 className={'text-[20px] font-bold leading-5 text-color'}>LXST CXNTURY</h4>
+                            </div>
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'text-[18px] font-bold text-color ml-3'}>
+                            Albums for you
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                    <div className={'absolute w-[30%] bg-[#424242] top-0 right-0 bottom-0 rounded-r-3xl'}></div>
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                    <div className={'absolute w-[30%] bg-[#424242] top-0 right-0 bottom-0 rounded-r-3xl'}></div>
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+                                    <div className={'absolute w-[30%] bg-[#424242] top-0 right-0 bottom-0 rounded-r-3xl'}></div>
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'flex flex-col gap-y-3'}>
+                        <div className={'flex items-center gap-x-2 ml-3'}>
+                            <Link href={'/artists/42352543'} className={'w-10 h-10 bg-neutral-400 rounded-full'}></Link>
+                            <Link href={'/artists/42352543'} className={'text-[20px] font-bold text-color'}>Night Lovell</Link>
+                        </div>
+                        <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div className={'align-top active:scale-95 transition'}>
+                                <Link href={'/playlist/414154513'} className={'relative block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
+                                    image
+
+                                </Link>
+                                <div className={'max-w-[150px] px-1'}>
+                                    <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
+                                    <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={'absolute bottom-6 left-0 right-0 text-center subtitle-text-color mr-3'}>
+                        <p className={'text-[12px]'}>Didn't find anything for yourself?</p>
+                        <p className={'text-[12px]'}>Try our smart (common) search</p>
+                    </div>
+                </>
+            ) : (
                 <div className={'flex flex-col gap-y-3'}>
                     <div className={'text-[20px] font-bold text-color ml-3'}>
-                        Hey, <span className={'subtitle-text-color'}>{initDataUser.firstName}</span>, wanna smth special?
+                        Hey, <span className={'subtitle-text-color'}>Sweetie</span>, wanna smth special?
                     </div>
-                    <div className={'px-3 w-full min-h-[160px] overflow-x-scroll overflow-hidden whitespace-nowrap flex gap-x-1'}>
-                        <div className={'align-top active:scale-95 transition'}>
-                            <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
-                                image
-                            </Link>
-                            <div className={'max-w-[150px] px-1'}>
-                                <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>World Top</Link>
-                                <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
-                            </div>
-                        </div>
-                        <div className={'align-top active:scale-95 transition'}>
-                            <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
-                                image
-                            </Link>
-                            <div className={'max-w-[150px] px-1'}>
-                                <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Greatest Hits</Link>
-                                <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
-                            </div>
-                        </div>
-                        <div className={'align-top active:scale-95 transition'}>
-                            <Link href={'/playlist/414154513'} className={'block rounded-3xl h-[150px] w-[150px] bg-neutral-400 p-3 mb-1'}>
-                                image
-                            </Link>
-                            <div className={'max-w-[150px] px-1'}>
-                                <Link href={'/playlist/414154513'} className={'text-[16px] font-semibold truncate text-color'}>Winter Mix</Link>
-                                <p className={'text-[12px] font-light truncate text-color'}>Lana Del Rey, 21 Savage, Arctic Monkeys</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h2>Loading...</h2>
                 </div>
-            ) : (
-                <div>Loading...</div>
             )
-            }
-
+        }
         </div>
         )
         {/* userData ? (*/}

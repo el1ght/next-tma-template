@@ -17,8 +17,8 @@ const Profile = () => {
                     </div>
 
                     <div className={'text-center'}>
-                        <h2 className={'text-center text-[1.2rem] font-bold subtitle-text-color'}>Hey, <span className={'text-color'}>Чекан</span></h2>
-                        <p className={'subtitle-text-color'}>@el1ght</p>
+                        <h2 className={'text-center text-[1.2rem] font-bold subtitle-text-color'}>Hey, <span className={'text-color'}>{initDataUser ? initDataUser?.firstName : 'undefined'}</span></h2>
+                        <p className={'subtitle-text-color'}>{initDataUser ? `@${initDataUser?.username}` : '@undefined'}</p>
                     </div>
                 </div>
 

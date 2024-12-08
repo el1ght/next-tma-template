@@ -1,6 +1,6 @@
 'use client'
 
-import LikedContent from "@/components/LikedContent/LikedContent";
+import LikedContent from "./components/LikedContent";
 import Image from "next/image";
 import {FaPlay, FaRepeat, FaShuffle} from "react-icons/fa6";
 import {Page} from "@/components/Page";

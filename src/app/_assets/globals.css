@@ -5,6 +5,7 @@
 body {
   background: var(--tg-theme-secondary-bg-color, black);
   position: relative;
+  overflow: hidden;
 }
 
 

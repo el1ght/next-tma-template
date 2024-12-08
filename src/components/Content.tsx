@@ -9,7 +9,7 @@ const Content: React.FC<ContentProps> = ({
 }) => {
 
     return (
-        <main className={`h-full text-color`}>
+        <main className={`h-[100vh] overflow-y-auto text-color`}>
             {children}
         </main>
     );

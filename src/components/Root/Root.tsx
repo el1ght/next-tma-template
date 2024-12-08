@@ -2,6 +2,7 @@
 
 import { type PropsWithChildren, useEffect } from 'react';
 import {
+  expandViewport,
   initData,
   miniApp,
   useLaunchParams,
@@ -40,8 +41,6 @@ function RootInner({ children }: PropsWithChildren) {
   const isDark = useSignal(miniApp.isDark);
   const initDataUser = useSignal(initData.user);
 
-  console.log(initDataUser)
-
   // Set the user locale.
   useEffect(() => {
     initDataUser && setLocale(initDataUser.languageCode);
@@ -58,8 +57,7 @@ function RootInner({ children }: PropsWithChildren) {
         appearance={isDark ? 'dark' : 'light'}
         platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
       >
-        {children}
-
+          {children}
       </AppRoot>
   );
 }

@@ -6,12 +6,14 @@ import Link from "next/link";
 import {IoPerson, IoPersonAdd, IoSearch} from "react-icons/io5";
 import Image from "next/image";
 import {PiPlaylistBold} from "react-icons/pi";
+import {useLaunchParams} from "@telegram-apps/sdk-react";
 
 const NavigationBar = () => {
     const pathname = usePathname();
+    const lp = useLaunchParams();
 
     return (
-        <div className={`bottom-3 left-2 right-2 fixed flex p-1 section-bg-color section-separator-color-border rounded-full justify-between items-center shadow border`}>
+        <div className={`${lp?.platform === 'ios' ? 'bottom-5' : 'bottom-2' } left-2 right-2 absolute flex p-1 section-bg-color section-separator-color-border rounded-full justify-between items-center shadow border`}>
 
             <Link href={'/search'} className={`navigation-button flex p-6 rounded-full  justify-center items-center transition-all shadow-md ${pathname === '/search' ? 'button-color' : 'section-separator-color'}`}>
                 <IoSearch className={'text-color'} size={20} />

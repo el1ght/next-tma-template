@@ -5,7 +5,7 @@ import {
   miniApp,
   initData,
   $debug,
-  init as initSDK,
+  init as initSDK, expandViewport,
 } from '@telegram-apps/sdk-react';
 
 /**
@@ -28,6 +28,8 @@ export function init(debug: boolean): void {
   void viewport.mount().catch(e => {
     console.error('Something went wrong mounting the viewport', e);
   });
+
+  expandViewport();
 
   // Define components-related CSS variables.
   viewport.bindCssVars();

@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slider": "^1.2.1",
     "@telegram-apps/sdk-react": "^2.0.5",
     "@telegram-apps/telegram-ui": "^2.1.5",
     "@tonconnect/ui-react": "^2.0.5",
@@ -18,6 +19,7 @@
     "next-intl": "^3.17.6",
     "normalize.css": "^8.0.1",
     "query-string": "^9.1.1",
+    "radix-ui": "^1.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
