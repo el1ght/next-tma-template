@@ -11,6 +11,7 @@ import {TbRepeat} from "react-icons/tb";
 import {PiShuffleBold} from "react-icons/pi";
 import {HiSpeakerWave, HiSpeakerXMark} from "react-icons/hi2";
 import VolumeSlider from "./VolumeSlider";
+import {useLaunchParams} from "@telegram-apps/sdk-react";
 
 interface PlayerContentProps {
     song: Song;
@@ -20,11 +21,12 @@ interface PlayerContentProps {
 }
 
 const PlayerContent: React.FC<PlayerContentProps> = ({
-                                                         song,
-                                                         songUrl,
-                                                         expand,
-                                                         setExpand
-                                                     }) => {
+     song,
+     songUrl,
+     expand,
+     setExpand
+ }) => {
+    const lp = useLaunchParams();
 
     const player = usePlayer();
 
@@ -147,7 +149,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
 
     return (
         <>
-            <div className={`absolute flex justify-between  overflow-hidden ${expand ? 'm-0 bottom-0 top-0 w-full h-full transition-all ' : 'bottom-[92px] right-2 left-2'}`}>
+            <div className={`absolute flex justify-between  overflow-hidden ${expand ? 'm-0 bottom-0 top-0 w-full h-full transition-all ' : `${lp?.platform === 'ios' ? 'bottom-[100px]' : 'bottom-[88px]' } right-2 left-2`}`}>
                 <div className={`overflow-hidden w-full`}>
                     <div className={`border-b relative w-full  section-separator-color-border shadow overflow-hidden transition-all ${expand ? 'h-full rounded-none  secondary-bg-color p-3' : 'section-bg-color rounded-[40px] p-1'}`}>
                         {
