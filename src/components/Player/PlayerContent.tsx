@@ -151,7 +151,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
         <>
             <div className={`absolute flex justify-between  overflow-hidden ${expand ? 'm-0 bottom-0 top-0 w-full h-full transition-all ' : `${lp?.platform === 'ios' ? 'bottom-[100px]' : 'bottom-[88px]' } right-2 left-2`}`}>
                 <div className={`overflow-hidden w-full`}>
-                    <div className={`border-b relative w-full  section-separator-color-border shadow overflow-hidden transition-all ${expand ? 'h-full rounded-none  secondary-bg-color p-3' : 'section-bg-color rounded-[40px] p-1'}`}>
+                    <div className={`border-b relative w-full  section-separator-color-border shadow overflow-hidden transition-all ${expand ? 'h-full rounded-none  secondary-bg-color p-3' : 'section-bg-color rounded-3xl p-1'}`}>
                         {
                             expand ? (
                                 <>
@@ -223,8 +223,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                                         </div>
 
                                         <div className={'flex items-center justify-between gap-x-2'}>
-                                            <div onClick={() => setExpand(true)} className={'flex gap-x-2 items-center cursor-pointer'}>
-                                                <Image src={song.image_path} alt={'image'} width={30} height={30} className={'w-[65px] h-[65px] rounded-full'} />
+                                            <div onClick={() => setExpand(true)} className={'flex gap-x-2 items-center cursor-pointer p-1'}>
+                                                <Image src={song.image_path} alt={'image'} width={30} height={30} className={'w-[60px] h-[60px] rounded-3xl'} />
                                                 <div className={''}>
                                                     <p className={'text-[15px] truncate text-color'}>{title}</p>
                                                     <p className={'subtitle-text-color truncate text-[12px] block'}>{author}</p>
@@ -232,10 +232,10 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                                             </div>
 
                                             <div className={'flex flex-row items-center gap-x-1 section-separator-color-border rounded-full p-1'}>
-                                                <div onClick={togglePlayPause} className={`cursor-pointer flex items-center justify-center shadow-xl transition rounded-full p-4  ${!isPlaying ? 'button-color' : 'section-separator-color'}`}>
+                                                <div onClick={togglePlayPause} className={`cursor-pointer flex items-center justify-center shadow-xl transition rounded-2xl p-4  ${!isPlaying ? 'button-color' : 'section-separator-color'}`}>
                                                     <Icon size={24} className={'text-color'} />
                                                 </div>
-                                                <div onClick={onPlayNext} className={`shadow-xl flex items-center justify-center transition rounded-full cursor-pointer p-5 section-separator-color`}>
+                                                <div onClick={onPlayNext} className={`shadow-xl flex items-center justify-center transition rounded-2xl cursor-pointer p-5 section-separator-color`}>
                                                     <IoPlaySkipForward size={16} className={'text-color'} />
                                                 </div>
                                             </div>

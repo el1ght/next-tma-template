@@ -58,7 +58,7 @@ const HomeLayout = () => {
     //Check if from Telegram
 
     const handleClick = () => {
-        openTelegramLink('https://t.me/heyqbnk');
+        openTelegramLink('https://t.me/durov');
     }
 
     return (

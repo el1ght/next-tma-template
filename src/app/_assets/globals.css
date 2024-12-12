@@ -6,6 +6,9 @@ body {
   background: var(--tg-theme-secondary-bg-color, black);
   position: relative;
   overflow: hidden;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
 }
 
 

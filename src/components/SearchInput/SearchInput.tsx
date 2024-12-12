@@ -30,6 +30,7 @@ const SearchInput = () => {
             placeholder={'What do you want to listen to?'}
             value={value}
             onChange={(e) => setValue(e.target.value)}
+            className={""}
         />
     );
 };

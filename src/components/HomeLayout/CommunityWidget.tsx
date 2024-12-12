@@ -16,9 +16,9 @@ const CommunityWidget: React.FC<CommunityWidgetProps> = ({
                     <p className={'text-[14px] text-color'}>1,000,000,000 </p>
                 </div>
             </div>
-            <Link href={'https://t.me/devs_cis'} className={'button-color text-color py-2 px-3 rounded-3xl font-semibold flex items-center justify-center active:scale-95 transition'}>
+            <div onClick={handleClick} className={'button-color text-color py-2 px-3 rounded-3xl font-semibold flex items-center justify-center active:scale-95 transition'}>
                 Follow
-            </Link>
+            </div>
         </div>
     );
 };
